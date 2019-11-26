@@ -106,7 +106,7 @@ class Game extends Component {
         })
       } else {
         document.getElementById('notAtLocationIndicator').innerText = 'You are not at the starting location of the game.';
-        console.log('Not here yet');
+        
       }
     }
 
@@ -117,8 +117,8 @@ class Game extends Component {
     
     // this is just a test location for now -- in front of webb statue
     target = {
-      latitude: 40.820583,
-      longitude: -73.949105
+      latitude: games[this.state.gameID].Starting_Location.latitude,
+      longitude: games[this.state.gameID].Starting_Location.longitude
     }
     
     // start watching
@@ -221,7 +221,7 @@ class Game extends Component {
             <button className="btn-lg btn-danger" type="button"><a href="/Game">&nbsp; Exit &nbsp;</a></button>
           </div>
           <div className="gameInterface">
-            <Timer gameId={this.state.gameID} startCount="300" />
+            <Timer gameId={this.state.gameID} startCount="600" />
           </div>
           <br />
         </div>
