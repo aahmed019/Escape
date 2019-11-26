@@ -221,7 +221,7 @@ class Game extends Component {
             <button className="btn-lg btn-danger" type="button"><a href="/Game">&nbsp; Exit &nbsp;</a></button>
           </div>
           <div className="gameInterface">
-            <Timer gameId={this.state.gameID} startCount="300" />
+            <Timer gameId={this.state.gameID} startCount="600" />
           </div>
           <br />
         </div>
