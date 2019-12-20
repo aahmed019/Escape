@@ -131,7 +131,7 @@ class AdminDashboard extends Component {
             Username: user.Username,
         }
 
-        // check if user is disable
+        // handles disabling users
         if (user.Enabled) {
             cognitoidentityserviceprovider.adminDisableUser(params, function (err, data) {
                 if (err) {
@@ -145,7 +145,7 @@ class AdminDashboard extends Component {
                 status: false,
             });
             user.Enabled = false;
-        } else if (!user.Enabled) {
+        } else if (!user.Enabled) { // handles enabling users
             cognitoidentityserviceprovider.adminEnableUser(params, function (err, data) {
                 if (err) {
                     console.log(err);

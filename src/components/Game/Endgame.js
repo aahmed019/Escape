@@ -37,7 +37,7 @@ class Endgame extends Component {
         }
 
         try {
-
+            // Handles the review information, updates the rating based on the average of all reviews
             const newReviewCount = {
                 id: this.props.gameId,
                 ReviewCount: reviewCount + 1,
@@ -85,6 +85,7 @@ class Endgame extends Component {
     }
 
     render() {
+        //User winning page
         if (this.props.outcome) {
             return (
                 <div className="ending-page" >
@@ -127,6 +128,7 @@ class Endgame extends Component {
 
             )
         }
+        // User losing page
         else {
             return (
                 <div className="ending-page">

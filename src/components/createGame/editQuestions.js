@@ -7,7 +7,7 @@ import Switch from '@material-ui/core/Switch';
 class EditQuestions extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.state = { // The states used here are updated by iterating through the questions, so we can edit current information, or add a new question
             imgLink: '',
             hidden: false,
             disable0: (this.props.gameVisualAid0[this.props.editAtQuestion] == null) ? true : (this.props.gameVisualAid0[this.props.editAtQuestion].length > 0),
@@ -23,6 +23,7 @@ class EditQuestions extends Component {
         this.handleAid3 = this.handleAid3.bind(this);
     }
     async handleSubmit(e) {
+        //All is pulled from the backend to show all current information for any given question within the edit component
         const updatedQuestion = {
             id: "00" + this.props.gameId + this.props.atQuestion,
             questionGameId: this.props.gameId,
@@ -68,7 +69,7 @@ class EditQuestions extends Component {
         this.props.func();
     }
 
-
+//Shows the image of a question when added (preview)
     async handleOnChange(e) {
         await this.setState({
             imgLink: e.target.value,
@@ -113,7 +114,7 @@ class EditQuestions extends Component {
                         <div className='form-group'>
 
                             {/* Instruction */}
-                            <label for='question-instruction'>Instruction for this Question</label>
+                            <label for='question-instruction'>Instructions for this Question</label>
                             <input id='question-instruction' type='text' className='form-control' required defaultValue={(this.props.gameInstruction[this.props.editAtQuestion] == null) ? "" : this.props.gameInstruction[this.props.editAtQuestion]} ></input>
                             {/* Geo Location */}
                             <label for='question-longtitude'>Longtitude Value for Question</label>
@@ -121,7 +122,7 @@ class EditQuestions extends Component {
                             <label for='question-latitude'>Lattitude Value for Question</label>
                             <input id='question-latitude' type='text' className='form-control' required defaultValue={(this.props.gameQuestionGeos[this.props.editAtQuestion] == null) ? " " : this.props.gameQuestionGeos[this.props.editAtQuestion][1]}></input>
                             {/* Question Content */}
-                            <label for='question-question'>Content of Question to be displayed</label>
+                            <label for='question-question'>Question</label>
                             <input id='question-question' type='text' className='form-control' required defaultValue={(this.props.gameQuestions[this.props.editAtQuestion] == null) ? "" : this.props.gameQuestions[this.props.editAtQuestion]}></input>
                             {/* Question Visual Aid */}
                             <label for='question-aid'>Visual Aid for Question</label>

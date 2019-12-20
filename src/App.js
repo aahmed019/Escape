@@ -74,6 +74,7 @@ class App extends Component {
         </div>
         <div className="body-page">
 
+{/*All components are switched here, some like (create game and admin panels have their own link however are only accessible by admins*/}
           <Router>
             <Switch>
               <Route path='/admin' component = {AdminDashboard}/>

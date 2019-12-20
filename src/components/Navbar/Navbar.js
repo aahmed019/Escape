@@ -39,18 +39,21 @@ class Navigation extends Component {
 
   }
 
+  //Shows the authentication box where users log in
   handleShowAuth = () => {
     this.setState({
       showAuth: true,
     });
   }
 
+  //Hides the authentication box where users log in
   handleCloseAuth = () => {
     this.setState({
       showAuth: false,
     });
   }
 
+  //Whether user is signed in or not
   handleAuthStateChange = (state) => {
     if (state === 'signedIn') {
       const { username } = Auth.user;
@@ -61,6 +64,7 @@ class Navigation extends Component {
     }
   }
 
+  //Sign out handling
   handleSignOut = () => {
     Auth.signOut().then(() => {
       this.setState({
@@ -87,7 +91,7 @@ class Navigation extends Component {
           <div className="nav-logo"><a href="/"><img src={require("./escape.png")} alt="logo" /></a></div>
           <div className="space-btw-logo-items" />
           <div className="nav-items">
-            {username
+            {username // This whole area is showing whether user is logged in or not
               ? (
                 <div className="userLOGOUT">
                   <Nav className="navigation">
