@@ -7,7 +7,7 @@
 
 * Product owner：William Chung
 
-Live App: https://master.d39glwzrwynmmi.amplifyapp.com/ 
+Live App: https://master.d174y2ftdjacla.amplifyapp.com
 
 The App is meant to be viewed on strictly mobile and has not been optimized for desktop/laptop use. If you want to see it on desktop, press F12 and on the top left of the new panel, click the icon that looks like a phone/tablet.
 
